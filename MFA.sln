@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29318.209
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MFA.Server", "Server\MFA.Server.csproj", "{38EFC846-8965-41C8-AE5C-094E8958CB27}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MFA.Client", "Client\MFA.Client.csproj", "{B4F701FC-96C2-49D6-8A16-F4F8C7A18602}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MFA.Shared", "Shared\MFA.Shared.csproj", "{FAD44C54-AAB0-4DEF-BF3F-BDDB4E7384AA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{38EFC846-8965-41C8-AE5C-094E8958CB27}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38EFC846-8965-41C8-AE5C-094E8958CB27}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38EFC846-8965-41C8-AE5C-094E8958CB27}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38EFC846-8965-41C8-AE5C-094E8958CB27}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B4F701FC-96C2-49D6-8A16-F4F8C7A18602}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4F701FC-96C2-49D6-8A16-F4F8C7A18602}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4F701FC-96C2-49D6-8A16-F4F8C7A18602}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4F701FC-96C2-49D6-8A16-F4F8C7A18602}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FAD44C54-AAB0-4DEF-BF3F-BDDB4E7384AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FAD44C54-AAB0-4DEF-BF3F-BDDB4E7384AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FAD44C54-AAB0-4DEF-BF3F-BDDB4E7384AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FAD44C54-AAB0-4DEF-BF3F-BDDB4E7384AA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E06DD94D-13AD-452E-92F9-49469DDE5226}
+	EndGlobalSection
+EndGlobal
