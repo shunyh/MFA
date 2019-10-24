@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29318.209
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MFA.Server", "Server\MFA.Server.csproj", "{38EFC846-8965-41C8-AE5C-094E8958CB27}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MFA.Server", "Server\MFA.Server.csproj", "{38EFC846-8965-41C8-AE5C-094E8958CB27}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MFA.Client", "Client\MFA.Client.csproj", "{B4F701FC-96C2-49D6-8A16-F4F8C7A18602}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MFA.Client", "Client\MFA.Client.csproj", "{B4F701FC-96C2-49D6-8A16-F4F8C7A18602}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MFA.Shared", "Shared\MFA.Shared.csproj", "{FAD44C54-AAB0-4DEF-BF3F-BDDB4E7384AA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MFA.Shared", "Shared\MFA.Shared.csproj", "{FAD44C54-AAB0-4DEF-BF3F-BDDB4E7384AA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

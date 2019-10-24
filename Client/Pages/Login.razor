@@ -1,0 +1,45 @@
+﻿@page "/login"
+@using MFA.Shared.DTOs
+@using MFA.Shared.Validation
+@inject HttpClient Http
+
+<div>
+<EditForm Model="@loginValidationModel" OnValidSubmit="@HandleValidSubmit">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <p class="form-group">
+        <label for="email">Email:</label>
+        <InputText class="form-control" id="email" type="email" @bind-Value="@loginValidationModel.Email" placeholder="Enter Email" />
+    </p>
+    <p class="form-group">
+        <label for="password">Password:</label>
+        <InputText class="form-control" id="password" type="password" @bind-Value="@loginValidationModel.Password" placeholder="Enter password"/>
+    </p>
+    <p class="form-group">
+        <label for="totpCode">Totp code:</label>
+        <InputText class="form-control" id="totpCode" type="text" @bind-Value="@loginValidationModel.TotpCode" placeholder="Enter Totp code"/>
+    </p>
+
+    <button class="btn btn-primary" type="submit">Login</button>
+</EditForm>
+</div>
+
+@code
+{
+    private LoginValidationModel loginValidationModel = new LoginValidationModel();
+    private LoginRequestDto loginRequest;
+    private LoginResponseDto loginResponse;
+
+    private async Task HandleValidSubmit()
+    {
+        loginRequest = new LoginRequestDto
+        {
+            Email = loginValidationModel.Email,
+            Password = loginValidationModel.Password,
+            Totp = loginValidationModel.TotpCode
+        };
+        
+        loginResponse = await Http.PostJsonAsync<LoginResponseDto>("api/auth/login", loginRequest);
+    }
+}

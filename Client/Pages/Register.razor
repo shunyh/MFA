@@ -1,0 +1,51 @@
+﻿@page "/register"
+@using MFA.Shared.DTOs
+@using MFA.Shared.Validation
+@inject HttpClient Http
+
+<div>
+<EditForm Model="@registerValidationModel" OnValidSubmit="@HandleValidSubmit">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <p class="form-group">
+        <label for="email">Email:</label>
+        <InputText class="form-control" id="email" type="email" @bind-Value="@registerValidationModel.Email" placeholder="Enter Email" />
+    </p>
+    <p class="form-group">
+        <label for="password">Password:</label>
+        <InputText class="form-control" id="password" type="password" @bind-Value="@registerValidationModel.Password" placeholder="Enter password"/>
+    </p>
+    <p class="form-group">
+        <label for="repeatPassword">Confirm password:</label>
+        <InputText class="form-control" id="repeatPassword" type="password" @bind-Value="@registerValidationModel.RepeatPassword" placeholder="Confirm password"/>
+    </p>
+
+    <button class="btn btn-primary" type="submit">Submit</button>
+</EditForm>
+</div>
+
+@if (registerResponse != null)
+{
+    <div>
+        <img src="data:image/jpeg;base64,@registerResponse.QrCode"/>
+    </div>
+}
+
+@code
+{
+    private RegisterValidationModel registerValidationModel = new RegisterValidationModel();
+    private RegisterRequestDto registerRequest;
+    private RegisterResponseDto registerResponse;
+
+    private async Task HandleValidSubmit()
+    {
+        registerRequest = new RegisterRequestDto
+        {
+            Email = registerValidationModel.Email,
+            Password = registerValidationModel.Password
+        };
+
+        registerResponse = await Http.PostJsonAsync<RegisterResponseDto>("api/auth/register", registerRequest);
+    }
+}
